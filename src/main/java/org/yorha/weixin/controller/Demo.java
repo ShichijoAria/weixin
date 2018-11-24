@@ -1,6 +1,7 @@
-package org.yorha.weixin;
+package org.yorha.weixin.controller;
 
 import org.yorha.weixin.util.Decript;
+import org.yorha.weixin.util.MessageHandlerUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
 /**
  * @Description
@@ -54,10 +57,29 @@ public class Demo extends HttpServlet {
         } else {
             System.out.println("签名校验失败。");
         }
-        //验证签名
+    }
 
-        PrintWriter out = response.getWriter();
-        out.println("<h1>" + message + "</h1>");
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        System.out.println("请求进入");
+        String responseMessage;
+        try {
+            //解析微信发来的请求,将解析后的结果封装成Map返回
+            Map<String,String> map = MessageHandlerUtil.parseXml(request);
+            System.out.println("开始构造响应消息");
+            responseMessage = MessageHandlerUtil.buildResponseMessage(map);
+            System.out.println(responseMessage);
+            if(responseMessage.equals("")){
+                responseMessage ="未正确响应";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("发生异常："+ e.getMessage());
+            responseMessage ="未正确响应";
+        }
+        //发送响应消息
+        response.getWriter().println(responseMessage);
     }
 
     public void destroy() {
