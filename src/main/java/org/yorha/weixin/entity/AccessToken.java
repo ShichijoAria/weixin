@@ -1,6 +1,11 @@
 package org.yorha.weixin.entity;
 
 public class AccessToken {
+
+    private String accessToken;
+
+    private int expiresin;
+
     public String getAccessToken() {
         return accessToken;
     }
@@ -17,7 +22,5 @@ public class AccessToken {
         this.expiresin = expiresin;
     }
 
-    private String accessToken;
 
-    private int expiresin;
 }

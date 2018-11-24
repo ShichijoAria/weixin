@@ -15,4 +15,20 @@
     <url-pattern>/HelloWorld</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>initAccessTokenServlet</servlet-name>
+    <servlet-class>
+      org.yorha.weixin.controller.AccessTokenServlet
+    </servlet-class>
+    <init-param>
+      <param-name>appid</param-name>
+      <param-value>wxaa25b0c4e7ee2590</param-value>
+    </init-param>
+    <init-param>
+      <param-name>appsecret</param-name>
+      <param-value>c37b9c300893db3011117f284dee7414</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+
 </web-app>
