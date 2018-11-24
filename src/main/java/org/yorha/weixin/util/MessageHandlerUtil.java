@@ -54,6 +54,7 @@ public class MessageHandlerUtil {
 
     /**
      * 根据消息类型构造返回消息
+     *
      * @param map 封装了解析结果的Map
      * @return responseMessage(响应消息)
      */
@@ -106,6 +107,7 @@ public class MessageHandlerUtil {
 
     /**
      * 接收到文本消息后处理
+     *
      * @param map 封装了解析结果的Map
      * @return
      */
@@ -128,7 +130,7 @@ public class MessageHandlerUtil {
             case "语音":
                 //通过素材管理接口上传语音文件时得到的media_id
                 String voiceMediaId = "h3ul0TnwaRPut6Tl1Xlf0kk_9aUqtQvfM5Oq21unoWqJrwks505pkMGMbHnCHBBZ";
-                responseMessage = buildVoiceMessage(map,voiceMediaId);
+                responseMessage = buildVoiceMessage(map, voiceMediaId);
                 break;
             case "图文":
                 responseMessage = buildNewsMessage(map);
@@ -159,6 +161,7 @@ public class MessageHandlerUtil {
 
     /**
      * 生成消息创建时间 （整型）
+     *
      * @return 消息创建时间
      */
     private static String getMessageCreateTime() {
@@ -177,6 +180,7 @@ public class MessageHandlerUtil {
 
     /**
      * 构建提示消息
+     *
      * @param map 封装了解析结果的Map
      * @return responseMessageXml
      */
@@ -201,7 +205,8 @@ public class MessageHandlerUtil {
 
     /**
      * 构造文本消息
-     * @param map 封装了解析结果的Map
+     *
+     * @param map     封装了解析结果的Map
      * @param content 文本消息内容
      * @return 文本消息XML字符串
      */
@@ -234,7 +239,8 @@ public class MessageHandlerUtil {
 
     /**
      * 构造图片消息
-     * @param map 封装了解析结果的Map
+     *
+     * @param map     封装了解析结果的Map
      * @param mediaId 通过素材管理接口上传多媒体文件得到的id
      * @return 图片消息XML字符串
      */
@@ -270,7 +276,8 @@ public class MessageHandlerUtil {
 
     /**
      * 构造音乐消息
-     * @param map 封装了解析结果的Map
+     *
+     * @param map   封装了解析结果的Map
      * @param music 封装好的音乐消息内容
      * @return 音乐消息XML字符串
      */
@@ -313,7 +320,8 @@ public class MessageHandlerUtil {
 
     /**
      * 构造视频消息
-     * @param map 封装了解析结果的Map
+     *
+     * @param map   封装了解析结果的Map
      * @param video 封装好的视频消息内容
      * @return 视频消息XML字符串
      */
@@ -353,7 +361,8 @@ public class MessageHandlerUtil {
 
     /**
      * 构造语音消息
-     * @param map 封装了解析结果的Map
+     *
+     * @param map     封装了解析结果的Map
      * @param mediaId 通过素材管理接口上传多媒体文件得到的id
      * @return 语音消息XML字符串
      */
@@ -389,6 +398,7 @@ public class MessageHandlerUtil {
 
     /**
      * 构造图文消息
+     *
      * @param map 封装了解析结果的Map
      * @return 图文消息XML字符串
      */
@@ -462,6 +472,7 @@ public class MessageHandlerUtil {
 
     /**
      * 处理接收到语音消息
+     *
      * @param map
      * @return
      */
@@ -476,6 +487,7 @@ public class MessageHandlerUtil {
 
     /**
      * 处理接收到的视频消息
+     *
      * @param map
      * @return
      */
@@ -490,6 +502,7 @@ public class MessageHandlerUtil {
 
     /**
      * 处理接收到的小视频消息
+     *
      * @param map
      * @return
      */
@@ -504,6 +517,7 @@ public class MessageHandlerUtil {
 
     /**
      * 处理接收到的地理位置消息
+     *
      * @param map
      * @return
      */
@@ -517,6 +531,7 @@ public class MessageHandlerUtil {
 
     /**
      * 处理接收到的链接消息
+     *
      * @param map
      * @return
      */
@@ -530,6 +545,7 @@ public class MessageHandlerUtil {
 
     /**
      * 处理消息Message
+     *
      * @param map 封装了解析结果的Map
      * @return
      */
