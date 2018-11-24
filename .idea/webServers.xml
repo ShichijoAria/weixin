@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ab6d2714-b3a0-450f-bf6e-97a64c0e2a76" name="阿里云" url="http://47.107.190.69:8080">
+        <fileTransfer host="47.107.190.69" port="21" rootFolder="/home/ftp">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
