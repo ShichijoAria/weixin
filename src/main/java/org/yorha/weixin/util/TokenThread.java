@@ -4,10 +4,31 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.yorha.weixin.entity.AccessToken;
 
-public class TokenThread implements Runnable {
-    public static String appId = "";
+import java.io.IOException;
 
-    public static String appSecret= "";
+public class TokenThread implements Runnable {
+    public static String appId;
+
+    static {
+        try {
+            appId = ResourceUtil.getProperty("config","appId");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String appSecret;
+
+    static {
+        try {
+            appSecret = ResourceUtil
+                        .getProperty("config","appSecret");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    ;
 
     public static AccessToken accessToken = null;
 

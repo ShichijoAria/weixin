@@ -25,31 +25,34 @@ public class WeChatUtil {
 
     public static Menu initMenu(){
         Menu menu = new Menu();
-        ClickButton button11 = new ClickButton();
-        button11.setName("click1菜单");
-        button11.setType("click");
-        button11.setKey("11");
 
-        ViewButton button21 = new ViewButton();
-        button21.setName("view菜单");
-        button21.setType("view");
-        button21.setUrl("http://www.baidu.com");//我这里测试使用百度网站
+        ViewButton Btn1 = new ViewButton();
+        Btn1.setName("身份证识别");
+        Btn1.setType("view");
+        Btn1.setUrl("http://pi.yorha.org/weixin/fileUpload?");//我这里测试使用百度网站
 
-        ClickButton button31 = new ClickButton();
-        button31.setName("扫码事件");
-        button31.setType("scancode_push");
-        button31.setKey("31");
+        ViewButton Btn2 = new ViewButton();
+        Btn2.setName("驾驶证识别");
+        Btn2.setType("view");
+        Btn2.setUrl("http://pi.yorha.org/weixin/fileUpload?");//我这里测试使用百度网站
 
-        ClickButton button32 = new ClickButton();
-        button32.setName("地理位置");
-        button32.setType("location_select");
-        button32.setKey("32");
+        ViewButton Btn3 = new ViewButton();
+        Btn3.setName("银行卡识别");
+        Btn3.setType("view");
+        Btn3.setUrl("http://pi.yorha.org/weixin/fileUpload?");//我这里测试使用百度网站
+
+        ViewButton Btn4 = new ViewButton();
+        Btn4.setName("银行卡识别");
+        Btn4.setType("view");
+        Btn4.setUrl("http://pi.yorha.org/weixin/fileUpload?");//我这里测试使用百度网站
+
+
 
         Button button = new Button();
-        button.setName("菜单");
-        button.setSub_button(new Button[]{button31,button32});
+        button.setName("证件识别");
+        button.setSub_button(new Button[]{Btn1,Btn2,Btn3,Btn4});
 
-        menu.setButton(new Button[]{button11,button21,button});
+        menu.setButton(new Button[]{button});
         return menu;
 
     }

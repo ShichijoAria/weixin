@@ -1,5 +1,6 @@
 package org.yorha.weixin.controller;
 
+import org.yorha.weixin.util.ResourceUtil;
 import org.yorha.weixin.util.TokenThread;
 
 import javax.servlet.ServletException;
@@ -9,22 +10,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "AccessTokenServlet")
+/**
+ *
+ * @Description 启动tomcat时就启动该线程，定时获取accesstoken
+ * @Author       Aria
+ * @Date   18-11-18
+ * @Project_name weixin
+ *
+ */
 public class AccessTokenServlet extends HttpServlet {
 
+    /*
+     * @Description: 启动获取token的线程
+     * @Param: []
+     * @return: void
+     * @Author:  aria
+     * @Date: 18-11-25
+     */
     public void init() throws ServletException {
-        TokenThread.appId = getInitParameter("appid");  //获取servlet初始参数appid和appsecret
-        TokenThread.appSecret = getInitParameter("appsecret");
-        System.out.println("appid:"+TokenThread.appId);
-        System.out.println("appSecret:"+TokenThread.appSecret);
         new Thread(new TokenThread()).start(); //启动进程
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }

@@ -15,7 +15,6 @@ import java.util.Map;
 
 /**
  * 消息处理工具类
- * Created by xdp on 2016/1/26.
  */
 public class MessageHandlerUtil {
 
@@ -118,8 +117,7 @@ public class MessageHandlerUtil {
         String content = map.get("Content");
         switch (content) {
             case "文本":
-                String msgText = "孤傲苍狼又要开始写博客总结了,欢迎朋友们访问我在博客园上面写的博客\n" +
-                        "<a href=\"http://www.cnblogs.com/xdp-gacl\">孤傲苍狼的博客</a>";
+                String msgText = "这是一条文本";
                 responseMessage = buildTextMessage(map, msgText);
                 break;
             case "图片":
@@ -199,7 +197,7 @@ public class MessageHandlerUtil {
                                 "<Content><![CDATA[%s]]></Content>" +
                                 "</xml>",
                         fromUserName, toUserName, getMessageCreateTime(),
-                        "感谢您关注我的个人公众号，请回复如下关键词来使用公众号提供的服务：\n文本\n图片\n语音\n视频\n音乐\n图文");
+                        "感谢您使用证件识别助手，回复一下关键词可以使用公众号提供的服务：\n文本\n图片\n语音\n视频\n音乐\n图文");
         return responseMessageXml;
     }
 
