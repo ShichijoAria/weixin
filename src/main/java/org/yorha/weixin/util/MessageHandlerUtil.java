@@ -22,15 +22,13 @@ import java.util.Map;
 public class MessageHandlerUtil {
 
     /**
-     *
-     *@Description 解析微信发来的请求（XML）
-     *@Params  [request] 封装了请求信息的HttpServletRequest对象
-     *@Return  java.util.Map<java.lang.String,java.lang.String>
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw Exception
-     *@Other
-     *
+     * @Description 解析微信发来的请求（XML）
+     * @Params [request] 封装了请求信息的HttpServletRequest对象
+     * @Return java.util.Map<java.lang.String   ,   java.lang.String>
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw Exception
+     * @Other
      */
     public static Map<String, String> parseXml(HttpServletRequest request) throws Exception {
         // 将解析结果存储在HashMap中
@@ -58,15 +56,13 @@ public class MessageHandlerUtil {
 
 
     /**
-     *
-     *@Description 根据消息类型构造返回消息
-     *@Params  [map] 封装了解析结果的Map
-     *@Return  java.lang.String 响应消息
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 根据消息类型构造返回消息
+     * @Params [map] 封装了解析结果的Map
+     * @Return java.lang.String 响应消息
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     public static String buildResponseMessage(Map map) {
         //响应消息
@@ -116,15 +112,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 接收到文本消息后根据其内容进行处理
-     *@Params  [map] 封装了解析结果的Map
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 接收到文本消息后根据其内容进行处理
+     * @Params [map] 封装了解析结果的Map
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String handleTextMessage(Map<String, String> map) {
 
@@ -176,15 +170,13 @@ public class MessageHandlerUtil {
 
 
     /**
-     *
-     *@Description 生成消息创建时间 （整型）
-     *@Params  []
-     *@Return  java.lang.String 消息创建时间
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 生成消息创建时间 （整型）
+     * @Params []
+     * @Return java.lang.String 消息创建时间
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String getMessageCreateTime() {
         Date dt = new Date();// 如果不需要格式,可直接用dt,dt就是当前系统时间
@@ -200,15 +192,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 构建默认返回消息
-     *@Params  [map] 封装了解析结果的Map
-     *@Return  java.lang.String responseMessageXml
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 构建默认返回消息
+     * @Params [map] 封装了解析结果的Map
+     * @Return java.lang.String responseMessageXml
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String buildWelcomeTextMessage(Map<String, String> map) {
         String responseMessageXml;
@@ -231,15 +221,13 @@ public class MessageHandlerUtil {
 
 
     /**
-     *
-     *@Description 构造文本消息
-     *@Params  [map 封装了解析结果的Map, content 文本消息内容]
-     *@Return  java.lang.String 文本消息XML字符串
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 构造文本消息
+     * @Params [map 封装了解析结果的Map, content 文本消息内容]
+     * @Return java.lang.String 文本消息XML字符串
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String buildTextMessage(Map<String, String> map, String content) {
         //发送方帐号
@@ -269,15 +257,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 构造图片消息
-     *@Params  [map 封装了解析结果的Map, mediaId 通过素材管理接口上传多媒体文件得到的id]
-     *@Return  java.lang.String 图片消息XML字符串
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 构造图片消息
+     * @Params [map 封装了解析结果的Map, mediaId 通过素材管理接口上传多媒体文件得到的id]
+     * @Return java.lang.String 图片消息XML字符串
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String buildImageMessage(Map<String, String> map, String mediaId) {
 
@@ -311,15 +297,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 构造音乐消息
-     *@Params  [map 封装了解析结果的Map, music 封装好的音乐消息内容]
-     *@Return  java.lang.String 音乐消息XML字符串
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 构造音乐消息
+     * @Params [map 封装了解析结果的Map, music 封装好的音乐消息内容]
+     * @Return java.lang.String 音乐消息XML字符串
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String buildMusicMessage(Map<String, String> map, Music music) {
         //发送方帐号
@@ -359,15 +343,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description  构造视频消息
-     *@Params  [map, video] 封装了解析结果的Map 封装好的视频消息内容
-     *@Return  java.lang.String 视频消息XML字符串
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 构造视频消息
+     * @Params [map, video] 封装了解析结果的Map 封装好的视频消息内容
+     * @Return java.lang.String 视频消息XML字符串
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String buildVideoMessage(Map<String, String> map, Video video) {
         //发送方帐号
@@ -404,15 +386,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 构造语音消息
-     *@Params  [map, mediaId] 封装了解析结果的Map 通过素材管理接口上传多媒体文件得到的id
-     *@Return  java.lang.String 语音消息XML字符串
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 构造语音消息
+     * @Params [map, mediaId] 封装了解析结果的Map 通过素材管理接口上传多媒体文件得到的id
+     * @Return java.lang.String 语音消息XML字符串
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String buildVoiceMessage(Map<String, String> map, String mediaId) {
         //发送方帐号
@@ -446,15 +426,13 @@ public class MessageHandlerUtil {
 
 
     /**
-     *
-     *@Description 构造图文消息
-     *@Params  [map] 封装了解析结果的Map
-     *@Return  java.lang.String 图文消息XML字符串
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 构造图文消息
+     * @Params [map] 封装了解析结果的Map
+     * @Return java.lang.String 图文消息XML字符串
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String buildNewsMessage(Map<String, String> map) {
         String fromUserName = map.get("FromUserName");
@@ -493,15 +471,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 生成图文消息的一条记录
-     *@Params  [item]
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 生成图文消息的一条记录
+     * @Params [item]
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String buildSingleItem(NewsItem item) {
         String itemContent = String.format("<item>\n" +
@@ -514,15 +490,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 处理接收到图片消息
-     *@Params  [map]
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 处理接收到图片消息
+     * @Params [map]
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String handleImageMessage(Map<String, String> map) {
         String picUrl = map.get("PicUrl");
@@ -534,15 +508,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 处理接收到语音消息
-     *@Params  [map]
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 处理接收到语音消息
+     * @Params [map]
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String handleVoiceMessage(Map<String, String> map) {
         String format = map.get("Format");
@@ -554,15 +526,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 处理接收到的视频消息
-     *@Params  [map]
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 处理接收到的视频消息
+     * @Params [map]
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String handleVideoMessage(Map<String, String> map) {
         String thumbMediaId = map.get("ThumbMediaId");
@@ -574,15 +544,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 处理接收到的小视频消息
-     *@Params  [map]
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 处理接收到的小视频消息
+     * @Params [map]
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String handleSmallVideoMessage(Map<String, String> map) {
         String thumbMediaId = map.get("ThumbMediaId");
@@ -594,15 +562,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 处理接收到的地理位置消息
-     *@Params  [map]
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 处理接收到的地理位置消息
+     * @Params [map]
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String handleLocationMessage(Map<String, String> map) {
         String latitude = map.get("Location_X");  //纬度
@@ -613,15 +579,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 处理接收到的链接消息
-     *@Params  [map]
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 处理接收到的链接消息
+     * @Params [map]
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String handleLinkMessage(Map<String, String> map) {
         String title = map.get("Title");
@@ -632,15 +596,13 @@ public class MessageHandlerUtil {
     }
 
     /**
-     *
-     *@Description 处理消息Message
-     *@Params  [map] 封装了解析结果的Map
-     *@Return  java.lang.String
-     *@Author  aria
-     *@Date  18-11-26
-     *@Throw
-     *@Other
-     *
+     * @Description 处理消息Message
+     * @Params [map] 封装了解析结果的Map
+     * @Return java.lang.String
+     * @Author aria
+     * @Date 18-11-26
+     * @Throw
+     * @Other
      */
     private static String handleEventMessage(Map<String, String> map) {
         String responseMessage = buildWelcomeTextMessage(map);
