@@ -1,5 +1,3 @@
-package org.yorha.weixin.entity;
-
 public class ClickButton extends Button {
     //Click类型菜单key
     private String key;

@@ -1,5 +1,3 @@
-package org.yorha.weixin.entity;
-
 public class Button {
     //菜单类型
     private String type;

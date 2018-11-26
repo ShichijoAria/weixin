@@ -1,5 +1,3 @@
-package org.yorha.weixin.entity;
-
 /**
  * @Description
  * @Author aria

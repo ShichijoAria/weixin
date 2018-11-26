@@ -1,11 +1,6 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import org.yorha.weixin.entity.AccessToken;
-import org.yorha.weixin.entity.Button;
-import org.yorha.weixin.entity.Menu;
-import org.yorha.weixin.entity.ViewButton;
 import org.yorha.weixin.util.MyHttpRequest;
-import org.yorha.weixin.util.WeChatUtil;
 
 import java.io.IOException;
 
@@ -25,7 +20,7 @@ public class WeChatBuildMenu {
     /*
      * @Description: 微信自定义菜单
      * @Param: []
-     * @return: org.yorha.weixin.entity.Menu
+     * @return: Menu
      * @Author:  aria
      * @Date: 18-11-25
      */
