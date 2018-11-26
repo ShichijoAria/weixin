@@ -19,12 +19,7 @@ import java.util.Enumeration;
  * @
  */
 @WebServlet(name = "fileUpload",
-        urlPatterns = "/fileUpload",
-        loadOnStartup = 1,
-        initParams = {
-                @WebInitParam(name="name", value="小明"),
-                @WebInitParam(name="pwd", value="123456")
-        }
+        urlPatterns = "/fileUpload"
 )
 public class FileUploadServlet extends HttpServlet {
 

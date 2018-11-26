@@ -7,35 +7,15 @@ import org.yorha.weixin.entity.AccessToken;
 import java.io.IOException;
 
 public class TokenThread implements Runnable {
-    public static String appId;
 
-    static {
-        try {
-            appId = ResourceUtil.getProperty("config","appId");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public static String appSecret;
-
-    static {
-        try {
-            appSecret = ResourceUtil
-                        .getProperty("config","appSecret");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    ;
 
     public static AccessToken accessToken = null;
 
     public void run(){
         while (true){
             try{
-                accessToken = this.getAccessToken();
+                accessToken = WeChatUtil.getAccessToken();
                 if(null!=accessToken){
                     System.out.println(accessToken.getAccessToken());
                     Thread.sleep(7000 * 1000); //获取到access_token 休眠7000秒
@@ -55,20 +35,4 @@ public class TokenThread implements Runnable {
         }
     }
 
-
-    /**
-     * 获取access_token
-     * @return
-     */
-    private AccessToken getAccessToken(){
-        String Url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",appId,appSecret);
-        String result = MyHttpRequest.sendGet(Url);
-        System.out.println(result);
-        //response.getWriter().println(result);
-        JSONObject json = JSON.parseObject(result);
-        AccessToken token = new AccessToken();
-        token.setAccessToken(json.getString("access_token"));
-        token.setExpiresin(json.getInteger("expires_in"));
-        return token;
-    }
 }

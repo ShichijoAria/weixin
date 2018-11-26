@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>Demo</servlet-name>
-    <servlet-class>org.yorha.weixin.controller.Demo</servlet-class>
+    <servlet-class>org.yorha.weixin.controller.EntryServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>

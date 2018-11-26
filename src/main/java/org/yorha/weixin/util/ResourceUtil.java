@@ -15,7 +15,7 @@ import java.util.Properties;
 public class ResourceUtil {
 
     /*
-     * @Description:获解析esources中的配置文件
+     * @Description:获解析esources中的配置文件,只能在部署后使用
      * @Param: [fileName, propertyName]
      * @return: java.lang.String
      * @Author:  aria

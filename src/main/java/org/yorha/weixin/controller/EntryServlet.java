@@ -2,8 +2,10 @@ package org.yorha.weixin.controller;
 
 import org.yorha.weixin.util.Decript;
 import org.yorha.weixin.util.MessageHandlerUtil;
+import org.yorha.weixin.util.ResourceUtil;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,22 +17,30 @@ import java.util.Arrays;
 import java.util.Map;
 
 /**
- * @Description
+ * @Description 微信请求入口
  * @Author aria
  * @Date 18-11-18
  * @Project_name weixin
  */
-public class Demo extends HttpServlet {
 
-    private String message;
-    private final String token = "yorha";
+@WebServlet(name = "entry",
+        urlPatterns = "/entry"
+)
+public class EntryServlet extends HttpServlet {
 
-    public void init() throws ServletException {
-        // 执行必需的初始化
-        message = "Hello World";
-    }
-
+    /**
+     *
+     *@Description
+     *@Params  [request, response]
+     *@Return  void
+     *@Author  aria
+     *@Date  18-11-26
+     *@Throw
+     *@Other
+     *
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         // 设置响应内容类型
         response.setContentType("text/html");
 
@@ -47,7 +57,7 @@ public class Demo extends HttpServlet {
         array.add(nonce);
 
         //排序
-        String sortString = sort(token, timestamp, nonce);
+        String sortString = sort(ResourceUtil.getProperty("config","token"), timestamp, nonce);
         //加密
         String mytoken = Decript.SHA1(sortString);
         //校验签名
