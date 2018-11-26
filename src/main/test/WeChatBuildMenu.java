@@ -1,6 +1,9 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.yorha.weixin.util.MyHttpRequest;
+import ui.Button;
+import ui.Menu;
+import ui.ViewButton;
 
 import java.io.IOException;
 
@@ -20,7 +23,7 @@ public class WeChatBuildMenu {
     /*
      * @Description: 微信自定义菜单
      * @Param: []
-     * @return: Menu
+     * @return: ui.Menu
      * @Author:  aria
      * @Date: 18-11-25
      */

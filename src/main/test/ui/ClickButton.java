@@ -1,3 +1,5 @@
+package ui;
+
 public class ClickButton extends Button {
     //Click类型菜单key
     private String key;

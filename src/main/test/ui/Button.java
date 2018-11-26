@@ -1,3 +1,5 @@
+package ui;
+
 public class Button {
     //菜单类型
     private String type;
