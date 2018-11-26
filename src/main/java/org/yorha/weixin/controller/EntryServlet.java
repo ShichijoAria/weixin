@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -30,7 +28,7 @@ public class EntryServlet extends HttpServlet {
 
     /**
      *
-     *@Description
+     *@Description 开发接入借口
      *@Params  [request, response]
      *@Return  void
      *@Author  aria
@@ -39,7 +37,8 @@ public class EntryServlet extends HttpServlet {
      *@Other
      *
      */
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // 设置响应内容类型
         response.setContentType("text/html");
@@ -69,7 +68,19 @@ public class EntryServlet extends HttpServlet {
         }
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    /**
+     *
+     *@Description 消息处理借口
+     *@Params  [request, response]
+     *@Return  void
+     *@Author  aria
+     *@Date  18-11-26
+     *@Throw
+     *@Other
+     *
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         System.out.println("请求进入");

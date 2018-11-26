@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Decript {
-  
+
     public static String SHA1(String decript) {
         try {
             MessageDigest digest = MessageDigest

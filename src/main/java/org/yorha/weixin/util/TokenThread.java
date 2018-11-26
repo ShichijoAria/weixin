@@ -6,9 +6,8 @@ import org.yorha.weixin.entity.AccessToken;
 
 import java.io.IOException;
 
+
 public class TokenThread implements Runnable {
-
-
 
     public static AccessToken accessToken = null;
 
