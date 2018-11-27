@@ -1,6 +1,6 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import org.yorha.weixin.util.MyHttpRequest;
+import org.yorha.weixin.util.HttpUtils;
 import ui.Button;
 import ui.Menu;
 import ui.ViewButton;
@@ -71,7 +71,7 @@ public class WeChatBuildMenu {
     public static int createMenu(String token,String menu) throws IOException {
         int result = 0;
         String url = CREATE_MENU_URL.replace("ACCESS_TOKEN", token);
-        JSONObject jsonObject = JSONObject.parseObject(MyHttpRequest.sendPost(url, menu));
+        JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendPost(url, menu));
         if(jsonObject != null){
 //正常返回0
             result = jsonObject.getIntValue("errcode");
@@ -93,7 +93,7 @@ public class WeChatBuildMenu {
      */
     public static String getAccessToken(String appId,String appSecret){
         String Url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",appId,appSecret);
-        String result = MyHttpRequest.sendGet(Url);
+        String result = HttpUtils.sendGet(Url);
         System.out.println(result);
         JSONObject json = JSON.parseObject(result);
         return json.getString("access_token");

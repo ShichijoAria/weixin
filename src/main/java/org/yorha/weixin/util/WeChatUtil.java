@@ -2,17 +2,9 @@ package org.yorha.weixin.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import org.dom4j.Document;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
 import org.yorha.weixin.entity.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @Description
@@ -43,7 +35,7 @@ public class WeChatUtil {
      */
     public static AccessToken getAccessToken(){
         String Url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",appId,appSecret);
-        String result = MyHttpRequest.sendGet(Url);
+        String result = HttpUtils.sendGet(Url);
         System.out.println(result);
         //response.getWriter().println(result);
         JSONObject json = JSON.parseObject(result);
