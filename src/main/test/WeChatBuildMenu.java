@@ -38,7 +38,7 @@ public class WeChatBuildMenu {
         ViewButton Btn2 = new ViewButton();
         Btn2.setName("驾驶证识别");
         Btn2.setType("view");
-        Btn2.setUrl("http://pi.yorha.org/weixin/fileUpload?");
+        Btn2.setUrl("http://pi.yorha.org/weixin/UploadHandleServlet?");
 
         ViewButton Btn3 = new ViewButton();
         Btn3.setName("银行卡识别");
@@ -46,9 +46,9 @@ public class WeChatBuildMenu {
         Btn3.setUrl("http://pi.yorha.org/weixin/creditCard?");
 
         ViewButton Btn4 = new ViewButton();
-        Btn4.setName("银行卡识别");
+        Btn4.setName("车牌号识别");
         Btn4.setType("view");
-        Btn4.setUrl("http://pi.yorha.org/weixin/fileUpload?");
+        Btn4.setUrl("http://pi.yorha.org/weixin/carNum?");
 
 
 

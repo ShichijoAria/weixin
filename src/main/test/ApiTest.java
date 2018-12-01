@@ -1,3 +1,7 @@
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.junit.Test;
@@ -84,4 +88,16 @@ public class ApiTest {
             e.printStackTrace();
         }
     }
+
+    public static JSONObject getParam(int type, String dataValue) {
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("dataType", type);
+            obj.put("dataValue", dataValue);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return obj;
+    }
+
 }

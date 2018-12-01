@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="dist/js/jquery.min.js"></script>
+<script src="dist/js/upload.js"></script>
+
+<body>
+
+<h3>上传图片</h3>
+<div id="drop_area"></div>
+
+<script type="text/javascript">
+    var dragImgUpload = new DragImgUpload("#drop_area",{
+        callback:function (files) {
+            //回调函数，可以传递给后台等等
+            var file = files[0];
+            console.log(file.name);
+        }
+    })
+</script>
+
+</body>
+</html>
