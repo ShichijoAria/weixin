@@ -43,7 +43,7 @@ public class WeChatBuildMenu {
         ViewButton Btn3 = new ViewButton();
         Btn3.setName("银行卡识别");
         Btn3.setType("view");
-        Btn3.setUrl("http://pi.yorha.org/weixin/fileUpload?");
+        Btn3.setUrl("http://pi.yorha.org/weixin/creditCard?");
 
         ViewButton Btn4 = new ViewButton();
         Btn4.setName("银行卡识别");

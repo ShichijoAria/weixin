@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
@@ -35,6 +36,31 @@ import org.apache.http.message.BasicNameValuePair;
 
 public class HttpUtils {
 
+	/**
+	 *
+	 *@Description  读取客户端json数据
+	 *@Params  [request]
+	 *@Return  java.lang.String
+	 *@Author  aria
+	 *@Date  18-11-29
+	 *@Throw
+	 *@Other
+	 *
+	 */
+	public static String readJSONString(HttpServletRequest request){
+		StringBuffer json = new StringBuffer();
+		String line = null;
+		try {
+			BufferedReader reader = request.getReader();
+			while((line = reader.readLine()) != null) {
+				json.append(line);
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e.toString());
+		}
+		return json.toString();
+	}
 
 	/**
 	 * 向指定URL发送GET方法的请求
