@@ -33,7 +33,7 @@ public class WeChatBuildMenu {
         ViewButton Btn1 = new ViewButton();
         Btn1.setName("身份证识别");
         Btn1.setType("view");
-        Btn1.setUrl("http://pi.yorha.org/weixin/fileUpload?");
+        Btn1.setUrl("http://pi.yorha.org/weixin/IDCard?");
 
         ViewButton Btn2 = new ViewButton();
         Btn2.setName("驾驶证识别");
