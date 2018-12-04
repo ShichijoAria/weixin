@@ -27,7 +27,7 @@
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 200) {
 
-                        tip.innerHTML = '<p>卡号：'+xhr.responseText+'</p> <small class="text-muted">演示使用了大量内存，可能会造成几秒内卡顿，不代表真实表现，请亲测。</small>';
+                        tip.innerHTML = '<p>信息：'+xhr.responseText+'</p> <small class="text-muted">演示使用了大量内存，可能会造成几秒内卡顿，不代表真实表现，请亲测。</small>';
                     }
                 };
 

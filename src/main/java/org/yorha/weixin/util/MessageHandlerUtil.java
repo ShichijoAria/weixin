@@ -215,7 +215,7 @@ public class MessageHandlerUtil {
                                 "<Content><![CDATA[%s]]></Content>" +
                                 "</xml>",
                         fromUserName, toUserName, getMessageCreateTime(),
-                        "感谢您使用证件识别助手，回复关键词可以使用公众号提供的服务：\n文本\n图片\n语音\n视频\n音乐\n图文");
+                        "感谢您使用证件识别助手，点击菜单里的按钮即可使用公众号提供的服务！");
         return responseMessageXml;
     }
 
